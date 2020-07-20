@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Plateformes/Plateforme.gd" type="Script" id=1]
+[ext_resource path="res://img/Plateforme1.bmp" type="Texture" id=2]
+[ext_resource path="res://img/Plateforme2.bmp" type="Texture" id=3]
+
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 90.1091, 16.9978 )
+
+[node name="PlateformeSimple" type="StaticBody2D" groups=[
+"plateforme",
+]]
+position = Vector2( 220.398, 312.743 )
+script = ExtResource( 1 )
+type = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Plateforme1" type="Sprite" parent="."]
+position = Vector2( -7.62939e-06, 0.634188 )
+scale = Vector2( 0.988815, 1.03598 )
+texture = ExtResource( 2 )
+
+[node name="Plateforme2" type="Sprite" parent="."]
+position = Vector2( -1.85966e-05, 0.634168 )
+scale = Vector2( 0.988815, 1.03598 )
+texture = ExtResource( 3 )

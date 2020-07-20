@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Plateformes/TriplePlateforme.gd" type="Script" id=1]
+[ext_resource path="res://Plateformes/PlateformeDroite.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Plateformes/PlateformeMilieu.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Plateformes/PlateformeGauche.tscn" type="PackedScene" id=6]
+
+[node name="TriplePlateforme" type="Node2D"]
+position = Vector2( 224.113, 331.917 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="PlateformeMilieu" parent="." instance=ExtResource( 5 )]
+position = Vector2( 19.435, 0 )
+type = 1
+
+[node name="PlateformeGauche" parent="." instance=ExtResource( 6 )]
+position = Vector2( -169.507, 3.05176e-05 )
+type = 1
+
+[node name="PlateformeDroite" parent="." instance=ExtResource( 4 )]
+position = Vector2( 202.813, 0 )
