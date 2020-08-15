@@ -16,8 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="TestViewport"
-run/main_scene="res://Root.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://menus/menu/Menu.tscn"
+config/icon="res://ressources/icon.png"
+
+[autoload]
+
+global="*res://global.gd"
 
 [input]
 

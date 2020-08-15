@@ -1,8 +1,10 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Plateformes/Plateforme.gd" type="Script" id=1]
-[ext_resource path="res://img/Plateforme1.bmp" type="Texture" id=2]
-[ext_resource path="res://img/Plateforme2.bmp" type="Texture" id=3]
+[ext_resource path="res://ressources/img/plateformes/Plateforme1.bmp" type="Texture" id=2]
+[ext_resource path="res://ressources/img/plateformes/Plateforme2.bmp" type="Texture" id=3]
+
+
 
 
 [sub_resource type="RectangleShape2D" id=1]

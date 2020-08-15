@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Plateformes/TriplePlateforme.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Plateformes/PlateformeSimple.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Plateformes/PlateformeVertical.tscn" type="PackedScene" id=3]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PlateformeSimple" parent="." instance=ExtResource( 2 )]
+position = Vector2( 426.926, -203.837 )
+
+[node name="PlateformeVertical" parent="." instance=ExtResource( 3 )]
+position = Vector2( 725.169, 92.6785 )
+
+[node name="PlateformeVertical3" parent="." instance=ExtResource( 3 )]
+position = Vector2( 778.448, -638.144 )
+scale = Vector2( 2, 3 )
+
+[node name="TriplePlateforme2" parent="." instance=ExtResource( 1 )]
+position = Vector2( -39.894, 125.493 )
+type1 = 1
+
+[node name="TriplePlateforme" parent="." instance=ExtResource( 1 )]
+position = Vector2( 225.113, 331.917 )
+type1 = 1
+type3 = 1
