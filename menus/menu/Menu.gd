@@ -18,3 +18,7 @@ func _ready():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://menus/choix_niveaux/Choix.tscn")
+
+
+func _on_Button2_pressed():
+	get_tree().change_scene("res://edition/Edit.tscn")

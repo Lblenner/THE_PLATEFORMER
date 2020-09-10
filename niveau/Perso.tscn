@@ -8,14 +8,11 @@
 [ext_resource path="res://ressources/img/perso/VersDroite1.bmp" type="Texture" id=8]
 [ext_resource path="res://ressources/img/perso/ImmobileDroite.bmp" type="Texture" id=9]
 
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 13.1579, 37.9474 )
-
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
-"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 3 ) ],
 "loop": true,
-"name": "running_left",
+"name": "stand_left",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 9 ) ],
@@ -28,22 +25,24 @@ animations = [ {
 "name": "running_right",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 3 ) ],
+"frames": [ ExtResource( 2 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "stand_left",
+"name": "running_left",
 "speed": 5.0
 } ]
 
-[node name="Perso2" type="KinematicBody2D"]
-position = Vector2( 240, 168 )
-script = ExtResource( 1 )
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 13.1579, 37.9474 )
 
-[node name="Body" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="Perso2" type="KinematicBody2D"]
+script = ExtResource( 1 )
 __meta__ = {
-"_edit_lock_": true
+"_edit_group_": true
 }
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "stand_left"
+
+[node name="Body" type="CollisionShape2D" parent="."]
+shape = SubResource( 2 )

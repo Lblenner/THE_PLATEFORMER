@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://niveau/Plateforme.gd" type="Script" id=1]
+
+[node name="Plateforme" type="StaticBody2D" groups=[
+"plat",
+"plateforme",
+]]
+input_pickable = true
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+[connection signal="input_event" from="." to="." method="_on_Plateforme_input_event"]

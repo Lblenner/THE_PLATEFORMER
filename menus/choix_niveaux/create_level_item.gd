@@ -1,19 +1,12 @@
-extends StaticBody2D
+extends PanelContainer
 
-enum Type {
-	TYPE1,
-	TYPE2
-}
-export (Type) var type = Type.TYPE1
+
+export (String) var text = "Erreur"
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	match(type):
-		Type.TYPE1:
-			$Plateforme1.visible = false
-		Type.TYPE2:
-			$Plateforme2.visible = false
-
+	$Label.text = text
 	pass # Replace with function body.
 
 

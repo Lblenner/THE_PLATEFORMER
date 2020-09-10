@@ -27,7 +27,7 @@ var running = false
 var dash = false
 var in_wall_slide = false
 var wall_on_right
-var current_collision
+var current_collision: KinematicCollision2D
 
 func _process(delta):
 	if (facing_right and not running):
@@ -142,16 +142,19 @@ func slide_state(collision):
 		if (current_collision.collider.is_in_group("plateforme")):
 			
 			var collision_x = current_collision.position[0]
-			var bord_x = global_position[0] 
-			var extent = get_node("Body").shape.get_extents()
-			var collider = current_collision.collider.get_node("CollisionShape2D")
-			var bas_collider = collider.global_position[1] + collider.shape.get_extents()[1]*current_collision.collider.scale[1]
-			var haut_self = global_position[1] - extent[1]*scale[1]
-
-			if wall_on_right and (abs(collision_x - (bord_x+extent[0]*scale[0])) > 1 or bas_collider < haut_self):
-				in_wall_slide = false
-			if not wall_on_right and (abs(collision_x - (bord_x-extent[0]*scale[0])) > 1 or bas_collider < haut_self):
-				in_wall_slide = false
+			var bord_x = global_position[0]
+			
+			for child in current_collision.collider.get_children():
+				if child.get_class() == "CollisionShape2D":
+					
+					var extent = get_node("Body").shape.get_extents()#child.shape.get_extents()
+					var bas_collider = child.global_position[1] + get_node("Body").shape.get_extents()[1]*current_collision.collider.scale[1]
+					var haut_self = global_position[1] - extent[1]*scale[1]
+		
+					if wall_on_right and (abs(collision_x - (bord_x+extent[0]*scale[0])) > 1 or bas_collider < haut_self):
+						in_wall_slide = false
+					if not wall_on_right and (abs(collision_x - (bord_x-extent[0]*scale[0])) > 1 or bas_collider < haut_self):
+						in_wall_slide = false
 		else:
 			in_wall_slide = false
 	

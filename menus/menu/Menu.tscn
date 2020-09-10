@@ -3,39 +3,59 @@
 [ext_resource path="res://menus/menu/Menu.gd" type="Script" id=1]
 [ext_resource path="res://menus/menu/MaFont.tres" type="DynamicFont" id=2]
 
-[node name="Control" type="Control"]
+[node name="Container" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+custom_constants/margin_right = 50
+custom_constants/margin_top = 50
+custom_constants/margin_left = 50
+custom_constants/margin_bottom = 50
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="."]
-anchor_left = 0.5
-anchor_right = 0.5
-margin_left = -238.5
-margin_right = 238.5
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 50.0
+margin_top = 50.0
+margin_right = 974.0
+margin_bottom = 550.0
+custom_constants/separation = 50
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+margin_right = 924.0
 margin_bottom = 85.0
 custom_fonts/font = ExtResource( 2 )
-text = "BlaBlaBla"
+text = "BlooP"
+align = 1
 uppercase = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Button" type="Button" parent="."]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -140.5
-margin_top = -45.5
-margin_right = 140.5
-margin_bottom = 45.5
+[node name="MarginContainer" type="VBoxContainer" parent="VBoxContainer"]
+margin_top = 135.0
+margin_right = 924.0
+margin_bottom = 337.0
+custom_constants/separation = 20
+
+[node name="Button" type="Button" parent="VBoxContainer/MarginContainer"]
+margin_right = 924.0
+margin_bottom = 91.0
 custom_fonts/font = ExtResource( 2 )
 text = "JOUER"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer"]
+margin_top = 111.0
+margin_right = 924.0
+margin_bottom = 202.0
+custom_fonts/font = ExtResource( 2 )
+text = "CREER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/Button2" to="." method="_on_Button2_pressed"]
